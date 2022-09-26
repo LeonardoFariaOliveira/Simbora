@@ -20,7 +20,7 @@ export default function HasUserBeenFoundModal({latitude, longitude, setHasUserBe
                     <div
                     onClick={()=> setHasUserBeenFound(false)} 
                      className = "max-w-[1.5rem] text-black transition-all duration-700 h-[2.438rem] cursor-pointer w-full relative ">
-                        <img src="./cancel-555.svg"/>
+                        <img src="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Fcancel-555.svg?alt=media&token=a554fca9-3142-48f8-96a9-4cde45250bb7"/>
                     </div>
                 </div>
                 <Link

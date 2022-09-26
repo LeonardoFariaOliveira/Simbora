@@ -19,13 +19,13 @@ export default function Navbar(){
                 <div className = "max-w-[11.729rem]  w-full p-[1rem] h-[3rem] relative">
                     <Image
                     className="absolute z-[58]"
-                    src={'/logo-simbora.png'}
+                    src={'https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Flogo-simbora.png?alt=media&token=e27e5d1e-3cab-4300-ae88-2107dd3562d3'}
                     layout="fill"
                     alt="Logo do Simbora!"
                     loading="lazy"
                     placeholder="blur"
                     objectFit="cover"
-                    blurDataURL="/logo-simbora.svg"
+                    blurDataURL="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Flogo-simbora.png?alt=media&token=e27e5d1e-3cab-4300-ae88-2107dd3562d3"
                     />
                 </div> 
                 <div className="mt-2">
@@ -77,7 +77,7 @@ export default function Navbar(){
                     <div className = "max-w-[2.188rem] transition-all duration-700 h-[2.438rem] cursor-pointer w-full relative ">
                         <Image 
                         onClick = {()=> setIsMenuOpen(false)}
-                        src={'/cancel.svg'}
+                        src={'https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Fcancel.svg?alt=media&token=7ccdbb60-c78d-44a2-a1ff-73c4e3eda4ad'}
                         layout="fill"
                         alt="Cancel button"
                         objectFit="cover"

@@ -14,7 +14,7 @@ export default function DataPlace({place, type,  setPlaces, setIsLoading}:any){
                         setPlaces()
                         setIsLoading(false)
                     }} className=" w-full mb-3  items-center justify-start flex">
-                        <img className="-rotate-90" width={30} src="../../arrow-up.svg"/>
+                        <img className="-rotate-90" width={30} src="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Farrow-up.svg?alt=media&token=f48bff06-130d-4cb7-9e74-19303d967759"/>
                     </div>
                     <div className="w-full mb-3 items-center justify-center flex flex-col">
                         <img className="rounded-full md:max-w-[8.805rem] max-w-[6.805rem] bg-[#eee]" src = {place.logo}/>
@@ -33,31 +33,31 @@ export default function DataPlace({place, type,  setPlaces, setIsLoading}:any){
                         <Link
                         href={`mailto:${place.email}`}>
                             <button className="bg-brown transition-colors ease-linear duration-150 hover:bg-green md:mr-6 my-[0.5rem] ml-2 md:ml-0 mr-3 md:p-2 p-[0.4rem] rounded-[4px]">
-                                <img className="max-w-[3rem] w-full" src = "../../email.svg"/>
+                                <img className="max-w-[3rem] w-full" src = "https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Femail.svg?alt=media&token=49eb3c36-6bf1-493d-a244-252d2020e31b"/>
                             </button>
                         </Link>
                         <Link
                         href={`${place.site}`}>
                             <button className="bg-brown transition-colors ease-linear duration-150 hover:bg-green md:mr-6 my-[0.5rem] mr-3 md:p-2 p-[0.4rem] rounded-[4px]">
-                                <img className="max-w-[3rem] w-full"  src = "../../site.svg"/>
+                                <img className="max-w-[3rem] w-full"  src = "https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Fsite.svg?alt=media&token=d2fe618b-b8bd-4b34-8e9d-a1f168b8b149"/>
                             </button>
                         </Link>
                         <Link
                         href={`https://api.whatsapp.com/send?phone="${place.whats}`}>
                             <button className="bg-brown transition-colors ease-linear duration-150 hover:bg-green md:mr-6 my-[0.5rem] mr-2 md:p-2 p-[0.4rem] rounded-[4px]">                                
-                                <img src = "../../whatsapp.svg"/>
+                                <img src = "https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Fwhatsapp.svg?alt=media&token=71af07d3-f6fa-4f1c-9da5-eec9becf4346"/>
                             </button>
                         </Link>
                         <Link
                         href={`${place.insta}`}>
                             <button className="bg-brown transition-colors ease-linear duration-150 hover:bg-green md:mr-6 my-[0.5rem] mr-3 md:p-2 p-[0.4rem] rounded-[4px]">                                
-                                <img src = "../../instagram.svg"/>
+                                <img src = "https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Finstagram.svg?alt=media&token=3a46bfbe-6a18-4e68-a621-eba694140743"/>
                             </button>
                         </Link>
                         <Link
                         href={`${place.face}`}>
                             <button className="bg-brown transition-colors ease-linear duration-150 hover:bg-green md:mr-6 my-[0.5rem] mr-3 md:p-2 p-[0.4rem] rounded-[4px]">                                
-                                <img className="max-w-[4rem] w-full" src = "../../facebook.svg"/>
+                                <img className="max-w-[4rem] w-full" src = "https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Ffacebook.svg?alt=media&token=3cdb2948-1ab2-4aaf-a209-b2aceb781a22"/>
                             </button>
                         </Link>
                         <button>

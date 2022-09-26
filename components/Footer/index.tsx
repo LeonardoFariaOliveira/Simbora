@@ -10,7 +10,7 @@ export default function Footer(){
                 <div className="flex flex-row justify-between max-w-[62.5rem] w-full">
                     <div className = "max-w-[6rem] transition-all duration-700 h-[6.4rem] cursor-pointer w-full relative ">
                             <Image 
-                            src={'/icone-simbora.png'}
+                            src={'https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Ficone-simbora.png?alt=media&token=6631cdf7-6097-45a2-a05e-3a4103991a46'}
                             layout="fill"
                             alt="Icone do planetario em forma do localização"
                             objectFit="cover"
@@ -25,7 +25,7 @@ export default function Footer(){
                             >
                                 {/* <button className="max-w-[1rem] transition-all duration-700 h-[1.4rem]"> */}
                                     <div className = "flex max-w-[3.5rem] transition-all bg-light-brown justify-center align-middle  pt-4 pb-4 rounded duration-700  cursor-pointer w-full ">
-                                        <img className="" src={'/arrow-up.svg'}/>
+                                        <img className="" src={'https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Farrow-up.svg?alt=media&token=f48bff06-130d-4cb7-9e74-19303d967759'}/>
                                     </div>
                                 {/* </button> */}
                             </Link>
