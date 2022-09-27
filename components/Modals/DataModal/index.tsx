@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ReactEventHandler, useState } from "react";
+import { ReactEventHandler, useEffect, useState } from "react";
 import Loading from "../../Loading";
 import DataFilters from "./DataFilters";
 import DataPlace from "./DataPlace";
@@ -13,6 +13,14 @@ export default function DataModal({data, type, city, setIsInputHidden, setIsPlac
     const [placeData, setPlaceData] = useState({})
     const [isLoading, setIsLoading] = useState<boolean>()
     const [a, setA] = useState()
+    const [cacheCity, setCacheCity] = useState<string |null>()
+    
+
+    useEffect(()=>{
+
+        setCacheCity(localStorage.getItem("city"))
+
+    })
 
     const setPlaces = () => {
 
@@ -72,46 +80,46 @@ export default function DataModal({data, type, city, setIsInputHidden, setIsPlac
                         <div className="modal-dialog modal-fullscreen relative w-auto pointer-events-none">
                             <div className="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
                                 <div className="modal-header flex flex-shrink-0 items-center justify-between py-4 px-[1.375rem] mb-4 flex-wrap rounded-t-md">
-                                    <Link href={`../../cities/${city === undefined ? "Bandeirantes" : city}/restaurants`}>
+                                    <Link href={`../../cities/${city === undefined ? cacheCity : city}/restaurants`}>
                                         <a>
                                             <DataFilters
                                             key = {1}
                                             type = "restaurants"
                                             title="Restaurantes"
-                                            iconUrl="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2FrestaurantsIcon.svg?alt=media&token=b1f82359-0702-4229-b89b-b48957c93d0b"
+                                            iconUrl="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2FrestaurantsIcon.svg?alt=media&token=9f3f0d44-c101-47d2-97c3-21afaf1312c1"
                                             active={type == "restaurants" ? true : false}
                                             />
                                         </a>
                                     </Link>
-                                    <Link href={`../../cities/${city === undefined ? "Bandeirantes" : city}/pubs`}>
+                                    <Link href={`../../cities/${city === undefined ? cacheCity : city}/pubs`}>
                                         <a>
                                             <DataFilters
                                             key = {2}
                                             type = "pubs"
                                             title="Bares"
-                                            iconUrl="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2FpubsIcon.svg?alt=media&token=7d130845-52f1-4460-ac36-9717f58accec"
+                                            iconUrl="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2FpubsIcon.svg?alt=media&token=576b5e4f-cd62-4039-be4d-8539c0574722"
                                             active={type == "pubs" ? true : false}
                                             />
                                         </a>
                                     </Link>
-                                    <Link href={`../../cities/${city === undefined ? "Bandeirantes" : city}/hotels`}>
+                                    <Link href={`../../cities/${city === undefined ? cacheCity : city}/hotels`}>
                                         <a>
                                             <DataFilters
                                             key = {3}
                                             type = "hotels"
                                             title="Hotéis"
-                                            iconUrl="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2FhotelsIcon.svg?alt=media&token=a722e75f-14e3-4f2a-9519-4095d182a9fa"
+                                            iconUrl="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2FhotelsIcon.svg?alt=media&token=c01886e8-6685-4c05-ad33-760084030e0f"
                                             active={type == "hotels" ? true : false}
                                             />
                                         </a>
                                     </Link>
-                                    <Link href={`../../cities/${city === undefined ? "Bandeirantes" : city}/events`}>
+                                    <Link href={`../../cities/${city === undefined ? cacheCity : city}/events`}>
                                         <a>
                                             <DataFilters
                                             key = {4}
                                             type = "events"
                                             title="Atrações"
-                                            iconUrl="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2FeventsIcon.svg?alt=media&token=369868f9-53b2-4694-89b2-1cb3aefddfa9"
+                                            iconUrl="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2FeventsIcon.svg?alt=media&token=ef4ed457-d39f-4f95-bdbd-d9defe967487"
                                             active={type == "events" ? true : false}
                                             />
                                         </a>

@@ -18,15 +18,20 @@ const Maps = dynamic(() => import('../../../components/Maps'), {
 
 export const getStaticProps: GetStaticProps = async(context) => {
 
-  // const {params, } = context
+  const {params} = context
   
-  // const city = params!.city === undefined ? "Bandeirantes" : params!.city
+  let city=null,cityData=null, cityDataJson=null, latitude=null, longitude=null
 
-  const cityData = await fetch(`https://api.tomtom.com/search/2/geocode/bandeirantes.json?key=YrGU0HeVxr169qOuGf8oZdggx3gthQFS`)
-  const cityDataJson = await cityData.json()
+  if(params?.city !== undefined){
 
-  const latitude = cityDataJson.results[0].position.lat
-  const longitude = cityDataJson.results[0].position.lon
+    city = params.city
+    cityData = await fetch(`https://api.tomtom.com/search/2/geocode/${city}.json?key=YrGU0HeVxr169qOuGf8oZdggx3gthQFS`)
+    cityDataJson = await cityData.json()
+    latitude = cityDataJson.results[0].position.lat
+    longitude = cityDataJson.results[0].position.lon
+    
+  }
+
   
   const data = await fetch(`https://uenp.fun/turismo/api/atracoes/`)
 
@@ -55,11 +60,17 @@ export const getStaticPaths = async () => {
       }
     },
   ],
-    fallback: true, // can also be true or 'blocking'
+    fallback: false, // can also be true or 'blocking'
   }
 }
 
 const Events: NextPage = ({city, latitude, longitude, places}:any) => {
+
+  useEffect(()=>{
+
+    localStorage.setItem("city", city)
+
+  },[])
 
   const [Ncity, setNCity] = useState()
   const [filter, setFilter] = useState("events")
@@ -85,7 +96,7 @@ const Events: NextPage = ({city, latitude, longitude, places}:any) => {
         <meta name="description" content="O mais novo guia de turismo que veio para trazer uma nova experiência para o turista brasileiro" />
         <link rel="icon" href="/icon-simbora.png" />
         </Head>
-        <div className='w-full relative  min-h-screen'>
+        <div className='w-full relative green-gradient animate-bg min-h-screen'>
           <div className={`w-full ${isModalHidden && "hidden"} flex justify-center`}>
             <DataModal 
             key = {5}
@@ -96,7 +107,6 @@ const Events: NextPage = ({city, latitude, longitude, places}:any) => {
             setIsPlaceeSelected = {setIsPlaceeSelected}
             init = {init}
             limit = {limit}
-            setPlacesLimit = {setPlacesLimit}
             />
 
           </div>
@@ -110,7 +120,7 @@ const Events: NextPage = ({city, latitude, longitude, places}:any) => {
                 onChange={(event:any) => setNCity(event.target.value)}
                 />
                 <Link href={{
-                  pathname: `/cities/${city}`,
+                  pathname: `/cities/${city}/events`,
                 }}>
                   <button className='bg-white box-border text-center align-middle -ml-12 mr-4 -mt-[0.8rem] h-[3.0rem] rounded-[4px]'>
                     <img className='mt-3' src = "../../../search.svg"/>
@@ -134,7 +144,7 @@ const Events: NextPage = ({city, latitude, longitude, places}:any) => {
               </button>
             </div>
           </div>
-          {isModalHidden ? 
+          {isModalHidden &&
               (
                 <Maps 
                 key = {6}
@@ -147,10 +157,7 @@ const Events: NextPage = ({city, latitude, longitude, places}:any) => {
                 setIsPlaceeSelected = {isPlaceeSelected}
                 />
               )
-            :
-              (
-                <img src = "/fundo-map.png" />
-              )
+
           }
         </div>
         

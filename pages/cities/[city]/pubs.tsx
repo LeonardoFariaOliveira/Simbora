@@ -18,15 +18,21 @@ const Maps = dynamic(() => import('../../../components/Maps'), {
 
 export const getStaticProps: GetStaticProps = async(context) => {
 
-  // const {params } = context
+  const {params} = context
   
-  // const city = params!.city === undefined ? "Bandeirantes" : params!.city
+  
+  let city=null,cityData=null, cityDataJson=null, latitude=null, longitude=null
 
-  const cityData = await fetch(`https://api.tomtom.com/search/2/geocode/bandeirantes.json?key=YrGU0HeVxr169qOuGf8oZdggx3gthQFS`)
-  const cityDataJson = await cityData.json()
+  if(params?.city !== undefined){
 
-  const latitude = cityDataJson.results[0].position.lat
-  const longitude = cityDataJson.results[0].position.lon
+    city = params.city
+    cityData = await fetch(`https://api.tomtom.com/search/2/geocode/${city}.json?key=YrGU0HeVxr169qOuGf8oZdggx3gthQFS`)
+    cityDataJson = await cityData.json()
+    latitude = cityDataJson.results[0].position.lat
+    longitude = cityDataJson.results[0].position.lon
+    
+  }
+
   
   const data = await fetch(`https://uenp.fun/turismo/api/bares`)
 
@@ -35,7 +41,7 @@ export const getStaticProps: GetStaticProps = async(context) => {
 
   return {
       props:{
-         city: "Bandeirantes",
+         city: city,
          latitude:latitude,
          longitude:longitude,
          places:places
@@ -55,11 +61,17 @@ export const getStaticPaths = async () => {
       }
     },
   ],
-    fallback: true, // can also be true or 'blocking'
+    fallback: false, // can also be true or 'blocking'
   }
 }
 
 const Pubs: NextPage = ({city, latitude, longitude, places}:any) => {
+
+  useEffect(()=>{
+
+    localStorage.setItem("city", city)
+
+  },[])
 
   const [Ncity, setNCity] = useState()
   const [filter, setFilter] = useState("pubs")
@@ -74,7 +86,7 @@ const Pubs: NextPage = ({city, latitude, longitude, places}:any) => {
         <meta name="description" content="O mais novo guia de turismo que veio para trazer uma nova experiência para o turista brasileiro" />
         <link rel="icon" href="/icon-simbora.png" />
         </Head>
-        <div className='w-full relative  min-h-screen'>
+        <div className='w-full relative green-gradient animate-bg min-h-screen'>
           <div className={`w-full ${isModalHidden && "hidden"} flex justify-center`}>
             <DataModal 
             key = {5}
@@ -98,7 +110,7 @@ const Pubs: NextPage = ({city, latitude, longitude, places}:any) => {
                 onChange={(event:any) => setNCity(event.target.value)}
                 />
                 <Link href={{
-                  pathname: `/cities/${city}`,
+                  pathname: `/cities/${city}/pubs`,
                 }}>
                   <button className='bg-white box-border text-center align-middle -ml-12 mr-4 -mt-[0.8rem] h-[3.0rem] rounded-[4px]'>
                     <img className='mt-3' src = "../../../search.svg"/>
@@ -107,7 +119,7 @@ const Pubs: NextPage = ({city, latitude, longitude, places}:any) => {
               </div>
             </div>
           </div>
-          <div className={`hidden xs:flex xs:flex-col absolute z-[9999]  px-4 w-full top-[36.8rem] xs:top-[1rem] ${isPlaceeSelected ? "md:top-[34.9rem]" : "md:top-[36rem]"} ${isPlaceeSelected ? "sm:top-[32rem]" : "sm:top-[29rem]"} items-center justify-center`}>
+          <div className={`hidden xs:flex xs:flex-col absolute ${isModalHidden ? "z-[999]" : "z-[99999]"}   px-4 w-full top-[36.8rem] xs:top-[1rem] ${isPlaceeSelected ? "md:top-[34.9rem]" : "md:top-[36rem]"} ${isPlaceeSelected ? "sm:top-[32rem]" : "sm:top-[29rem]"} items-center justify-center`}>
             <div className='  justify-end flex px-0 max-w-[15.5rem]  xs:max-w-[21rem] sm:max-w-[27rem] md:max-w-[34rem] w-full '>
               <button 
               onClick = {()=> {
@@ -117,12 +129,12 @@ const Pubs: NextPage = ({city, latitude, longitude, places}:any) => {
               else
                 setIsInputHidden(!isInputHidden)
               }} 
-              className=' py-3 px-8 rounded-[4px] transition-colors ease-linear duration-150 hover:bg-[#7F2F00] text-white font-main bg-brown'>
+              className=' py-3 px-8 rounded-[4px] transition-colors ease-linear duration-150   text-white font-main bg-brown'>
                 Ver {isModalHidden ? "bares" : "mapa"}
               </button>
             </div>
           </div>
-          {isModalHidden ? 
+          {isModalHidden && 
               (
                 <Maps 
                 key = {6}
@@ -134,10 +146,6 @@ const Pubs: NextPage = ({city, latitude, longitude, places}:any) => {
                 places ={places}
                 setIsPlaceeSelected = {isPlaceeSelected}
                 />
-              )
-            :
-              (
-                <img src = "/fundo-map.png" />
               )
           }
         </div>
