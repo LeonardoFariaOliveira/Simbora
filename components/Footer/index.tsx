@@ -21,11 +21,11 @@ export default function Footer(){
                         <div className="flex justify-end">
                             <Link
                             scroll
-                            href={"/"}
+                            href={"#navbar"}
                             >
                                 {/* <button className="max-w-[1rem] transition-all duration-700 h-[1.4rem]"> */}
-                                    <div className = "flex max-w-[3.5rem] transition-all bg-light-brown justify-center align-middle  pt-4 pb-4 rounded duration-700  cursor-pointer w-full ">
-                                        <img className="" src={'https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Farrow-up.svg?alt=media&token=f48bff06-130d-4cb7-9e74-19303d967759'}/>
+                                    <div className = "block max-w-[3.5rem] transition-all bg-light-brown justify-center align-middle  pt-4 pb-4 rounded duration-700  cursor-pointer w-full ">
+                                        <Image  className="" layout="responsive" width={5} height={5} alt = "Botão para subir" src={'https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Farrow-up.svg?alt=media&token=f48bff06-130d-4cb7-9e74-19303d967759'}/>
                                     </div>
                                 {/* </button> */}
                             </Link>

@@ -78,7 +78,7 @@ export default function DataModal({data, type, city, setIsInputHidden, setIsPlac
                                             key = {1}
                                             type = "restaurants"
                                             title="Restaurantes"
-                                            iconUrl="../../../restaurantsIcon.svg"
+                                            iconUrl="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2FrestaurantsIcon.svg?alt=media&token=b1f82359-0702-4229-b89b-b48957c93d0b"
                                             active={type == "restaurants" ? true : false}
                                             />
                                         </a>
@@ -89,7 +89,7 @@ export default function DataModal({data, type, city, setIsInputHidden, setIsPlac
                                             key = {2}
                                             type = "pubs"
                                             title="Bares"
-                                            iconUrl="../../../pubsIcon.svg"
+                                            iconUrl="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2FpubsIcon.svg?alt=media&token=7d130845-52f1-4460-ac36-9717f58accec"
                                             active={type == "pubs" ? true : false}
                                             />
                                         </a>
@@ -100,7 +100,7 @@ export default function DataModal({data, type, city, setIsInputHidden, setIsPlac
                                             key = {3}
                                             type = "hotels"
                                             title="Hotéis"
-                                            iconUrl="../../../hotelsIcon.svg"
+                                            iconUrl="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2FhotelsIcon.svg?alt=media&token=a722e75f-14e3-4f2a-9519-4095d182a9fa"
                                             active={type == "hotels" ? true : false}
                                             />
                                         </a>
@@ -111,7 +111,7 @@ export default function DataModal({data, type, city, setIsInputHidden, setIsPlac
                                             key = {4}
                                             type = "events"
                                             title="Atrações"
-                                            iconUrl="../../../eventsIcon.svg"
+                                            iconUrl="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2FeventsIcon.svg?alt=media&token=369868f9-53b2-4694-89b2-1cb3aefddfa9"
                                             active={type == "events" ? true : false}
                                             />
                                         </a>

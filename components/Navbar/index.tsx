@@ -14,7 +14,7 @@ export default function Navbar(){
 
     return(
         <>
-        <nav className={`flex flex-1 shadow-lg z-[9999] flex-row text-white relative justify-center sm:bg-[#eee] bg-light-brown pt-[2rem] pb-[2rem] pr-[1.875rem] h-[6.563rem] pl-[1.875rem] w-full`}>
+        <nav id = "navbar" className={`flex flex-1 shadow-lg z-[9999] flex-row text-white relative justify-center sm:bg-[#eee] bg-light-brown pt-[2rem] pb-[2rem] pr-[1.875rem] h-[6.563rem] pl-[1.875rem] w-full`}>
             <div className="flex flex-1 justify-between flex-row max-w-[90.5rem]">
                 <div className = "max-w-[11.729rem]  w-full p-[1rem] h-[3rem] relative">
                     <Image
@@ -22,7 +22,6 @@ export default function Navbar(){
                     src={'https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Flogo-simbora.png?alt=media&token=e27e5d1e-3cab-4300-ae88-2107dd3562d3'}
                     layout="fill"
                     alt="Logo do Simbora!"
-                    loading="lazy"
                     placeholder="blur"
                     objectFit="cover"
                     blurDataURL="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Flogo-simbora.png?alt=media&token=e27e5d1e-3cab-4300-ae88-2107dd3562d3"
@@ -102,12 +101,12 @@ export default function Navbar(){
                 </div>
                 <div className=" flex items-menu-transition">
                     <div className="flex flex-col pl-[1.875rem] pr-[1.875rem] items-center w-full justify-around h-28">
-                        <button className=" text-center items-center pr-4 max-w-[20.875rem] w-full h-[3rem] pl-4 pt-2 pb-2 rounded-[4px] bg-brown text-white text-text font-medium ">
+                        {/* <button className=" text-center items-center pr-4 max-w-[20.875rem] w-full h-[3rem] pl-4 pt-2 pb-2 rounded-[4px] bg-brown text-white text-text font-medium ">
                             Entrar
                         </button>
                         <button className=" text-center items-center pr-4 max-w-[20.875rem] w-full h-[3rem] pl-4 pt-2 pb-2 rounded-[4px] bg-green text-white text-text font-medium ">
                             Cadastrar
-                        </button>
+                        </button> */}
                     </div>
                 </div>
 
