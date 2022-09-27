@@ -60,9 +60,6 @@ export default function DataPlace({place, type,  setPlaces, setIsLoading}:any){
                                     <img className="max-w-[4rem] w-full" alt = "Botão com Facebook Logotipo" src = "https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Ffacebook.svg?alt=media&token=3cdb2948-1ab2-4aaf-a209-b2aceb781a22"/>
                                 </button>
                             </Link>
-                            <button>
-                                <img src = ""/>
-                            </button>
                     </div>
                     
                 </div>

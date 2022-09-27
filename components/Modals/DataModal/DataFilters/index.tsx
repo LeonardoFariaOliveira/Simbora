@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 
 export default function DataFilters({title, iconUrl, active, type}:any){

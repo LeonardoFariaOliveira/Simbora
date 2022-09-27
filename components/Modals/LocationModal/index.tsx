@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ReactEventHandler, useState } from "react";
 import Loading from "../../Loading";
-import LocationFilters from "./LocationFilters";
 import LocationPlace from "./LocationPlace";
 import LocationPlaces from "./LocationPlaces";
 

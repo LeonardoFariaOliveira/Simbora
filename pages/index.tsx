@@ -15,18 +15,18 @@ const Home: NextPage = () => {
   const [hasUserBeenFound, setHasUserBeenFound] = useState<boolean>(false)
   const [city, setCity] = useState<string>()
 
-  useEffect(()=>{
+  // useEffect(()=>{
 
-    navigator.geolocation.getCurrentPosition((pos:any)=>{
-      setLatitude(pos.coords.latitude)
-      setLongitude(pos.coords.longitude)
-      setHasUserBeenFound(true)
+  //   navigator.geolocation.getCurrentPosition((pos:any)=>{
+  //     setLatitude(pos.coords.latitude)
+  //     setLongitude(pos.coords.longitude)
+  //     setHasUserBeenFound(true)
 
-    })
+  //   })
 
     
 
-  }, [])
+  // }, [])
 
   
  
@@ -40,13 +40,13 @@ const Home: NextPage = () => {
       </Head>
       {/* `https://api.tomtom.com/search/2/reverseGeocode/${latitudeFrom},${longitudeFrom}?key=YrGU0HeVxr169qOuGf8oZdggx3gthQFS&entityType=PostalCodeArea&mapcodes=International` */}
 
-      {hasUserBeenFound && (
+      {/* {hasUserBeenFound && (
         <HasUserBeenFoundModal
         setHasUserBeenFound={setHasUserBeenFound}
           latitude={latitude!}
           longitude={longitude!}
         />
-      )}
+      )} */}
 
       <div className=' bg-main bg-cover z-[-1]relative flex w-full min-h-[84vh] justify-center  align-middle'>
           <div className='flex flex-col z-50 p-8 max-w-[62.5rem] w-full '>
@@ -61,7 +61,7 @@ const Home: NextPage = () => {
                 pathname: `/cities/${city}/restaurants`,
               }}>
                 <button className='bg-white box-border text-center align-middle -ml-12 mr-4 -mt-[0.8rem] h-[3.0rem] rounded-[4px]'>
-                  <img className='mt-3' src = "./search.svg"/>
+                  <img alt = "Lupa para indicar que é um botão de pesquisa" className='mt-3' src = "./search.svg"/>
                 </button>
               </Link>
             </div>
@@ -89,18 +89,10 @@ const Home: NextPage = () => {
           </h5>
         </div>
       </div>
-      {/* <div className='bg-light-white w-full flex items-center flex-col min-h-[84vh]'>
-        <div className=' mt-[5rem] flex justify-center  items-center md:mt-[10rem] place-content-center max-w-[62.5rem] w-full'>
-          <h1 className='font-main font-medium text-black max-w-[18rem] mb-10 md:text-[2.3rem] md:max-w-[32rem] text-center text-[1.25rem] xs:text-[1.45rem] sm:text-[1.75rem]'>Indicações de lugares para você dar uma olhada</h1>
-        </div>
-        <div className=' flex  flex-1 justify-center align-middle border max-w-[62.5rem] items-center w-full h-[18rem] md:h-[32rem]'>
-            <Slider/>
-          </div>
-      </div> */}
       <div className='bg-light-white justify-center align-middle flex w-full min-h-[84vh]'>
         <div className='w-full max-w-[62.5rem] flex flex-col mt-[10rem]'>
           <h1 className='font-main ml-4 font-medium text-black max-w-[18rem] md:text-[2.3rem] sm:max-w-[28rem] md:max-w-[35rem] text-left text-[1.45rem] sm:text-[1.75rem]'>Não tenho nenhum lugar para ir, a não ser todos os lugares</h1>
-          <img className='h-[20rem] sm:h-[35rem] md:h-[38rem] justify-center ' src='./Traveler.svg'/>
+          <img alt = "Figura de pessoas" className='h-[20rem] sm:h-[35rem] md:h-[38rem] justify-center ' src='./Traveler.svg'/>
         </div>
       </div>
     </Layout>

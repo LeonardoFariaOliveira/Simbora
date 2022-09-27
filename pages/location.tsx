@@ -61,7 +61,7 @@ const Location: NextPage = ({places, latitude, longitude, city}:any) => {
         <meta name="description" content="O mais novo guia de turismo que veio para trazer uma nova experiência para o turista brasileiro" />
         <link rel="icon" href="/icon-simbora.png" />
         </Head>
-        <div className='w-full relative  min-h-screen'>
+        <div className='w-full relative green-gradient animate-bg min-h-screen'>
           <div className={`w-full ${isModalHidden && "hidden"} flex justify-center`}>
             <LocationModal 
             key = {5}
@@ -105,12 +105,12 @@ const Location: NextPage = ({places, latitude, longitude, city}:any) => {
               else
                 setIsInputHidden(!isInputHidden)
               }} 
-              className=' py-3 px-8 rounded-[4px] transition-colors ease-linear duration-150 hover:bg-[#7F2F00] text-white font-main bg-brown'>
+              className=' py-3 px-8 rounded-[4px] transition-colors ease-linear duration-150 text-white font-main bg-brown'>
                 Ver {isModalHidden ? "restaurantes" : "mapa"}
               </button>
             </div>
           </div>
-          {isModalHidden ? 
+          {isModalHidden &&
   
               (
                 <Maps 
@@ -124,10 +124,6 @@ const Location: NextPage = ({places, latitude, longitude, city}:any) => {
                 places ={places}
                 setIsPlaceeSelected = {isPlaceeSelected}
                 />
-              )
-            :
-              (
-                <img className='h-[100vh]' src = "/fundo-map.png" />
               )
           }
           

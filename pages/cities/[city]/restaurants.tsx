@@ -82,9 +82,15 @@ const Restaurants: NextPage = ({city, latitude, longitude, places}:any) => {
   return (
     <Layout>
         <Head>
-        <title>Simbora!</title>
-        <meta name="description" content="O mais novo guia de turismo que veio para trazer uma nova experiência para o turista brasileiro" />
-        <link rel="icon" href="/icon-simbora.png" />
+          <title>Simbora!</title>
+          <meta name="description" content="Restaurantes em bandeirantes" />
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta property='og:title' content='Simbora' />
+          <meta
+            property='og:description'
+            content='Restaurantes em bandeirantes'
+          />
+          <link rel="icon" href="/icon-simbora.png" />
         </Head>
         <div className='w-full relative green-gradient animate-bg min-h-screen'>
           <div className={`w-full ${isModalHidden && "hidden"} flex justify-center`}>
@@ -98,7 +104,6 @@ const Restaurants: NextPage = ({city, latitude, longitude, places}:any) => {
             setIsPlaceeSelected = {setIsPlaceeSelected}
             init = {0}
             limit = {1}
-            setPlacesLimit = {()=>{}}
             />
           </div>
           <div className={`absolute z-[99999] slide-on-modal w-full top-[3.4rem]  xs:top-[0rem] ${isInputHidden ? "hidden" : "flex"} p-2 items-center justify-center`}>

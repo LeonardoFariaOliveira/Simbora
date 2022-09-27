@@ -82,9 +82,15 @@ const Pubs: NextPage = ({city, latitude, longitude, places}:any) => {
   return (
     <Layout>
         <Head>
-        <title>Simbora!</title>
-        <meta name="description" content="O mais novo guia de turismo que veio para trazer uma nova experiência para o turista brasileiro" />
-        <link rel="icon" href="/icon-simbora.png" />
+          <title>Simbora!</title>
+          <meta name="description" content="Bares em bandeirantes" />
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta property='og:title' content='Simbora' />
+          <meta
+            property='og:description'
+            content='Bares em bandeirantes'
+          />
+          <link rel="icon" href="/icon-simbora.png" />
         </Head>
         <div className='w-full relative green-gradient animate-bg min-h-screen'>
           <div className={`w-full ${isModalHidden && "hidden"} flex justify-center`}>
