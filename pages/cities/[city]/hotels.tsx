@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async(context) => {
 
   if(params?.city !== undefined){
 
-    city = params.city
+    city = params.city.toString().trim()
     cityData = await fetch(`https://api.tomtom.com/search/2/geocode/${city}.json?key=YrGU0HeVxr169qOuGf8oZdggx3gthQFS`)
     cityDataJson = await cityData.json()
     latitude = cityDataJson.results[0].position.lat
@@ -58,6 +58,12 @@ export const getStaticPaths = async () => {
       params: { 
         city: "Bandeirantes",
         params: "hotels"
+      }
+    },
+    {
+      params: { 
+        city: "Bandeirantes ",
+        params: "restaurants"
       }
     },
   ],

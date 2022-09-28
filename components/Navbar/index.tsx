@@ -16,17 +16,21 @@ export default function Navbar(){
         <>
         <nav id = "navbar" className={`flex flex-1 shadow-lg z-[9999] flex-row text-white relative justify-center sm:bg-[#eee] bg-light-brown pt-[2rem] pb-[2rem] pr-[1.875rem] h-[6.563rem] pl-[1.875rem] w-full`}>
             <div className="flex flex-1 justify-between flex-row max-w-[90.5rem]">
-                <div className = "max-w-[11.729rem]  w-full p-[1rem] h-[3rem] relative">
-                    <Image
-                    className="absolute z-[58]"
-                    src={'https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Flogo-simbora.png?alt=media&token=e27e5d1e-3cab-4300-ae88-2107dd3562d3'}
-                    layout="fill"
-                    alt="Logo do Simbora!"
-                    placeholder="blur"
-                    objectFit="cover"
-                    blurDataURL="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Flogo-simbora.png?alt=media&token=e27e5d1e-3cab-4300-ae88-2107dd3562d3"
-                    />
-                </div> 
+                <Link
+                href={"../../"}
+                >
+                    <div className = "max-w-[11.729rem] cursor-pointer w-full p-[1rem] h-[3rem] relative">
+                        <Image
+                        className="absolute z-[58]"
+                        src={'https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Flogo-simbora.png?alt=media&token=e27e5d1e-3cab-4300-ae88-2107dd3562d3'}
+                        layout="fill"
+                        alt="Logo do Simbora!"
+                        placeholder="blur"
+                        objectFit="cover"
+                        blurDataURL="https://firebasestorage.googleapis.com/v0/b/cadetutatu-d1a75.appspot.com/o/public%2Flogo-simbora.png?alt=media&token=e27e5d1e-3cab-4300-ae88-2107dd3562d3"
+                        />
+                    </div> 
+                </Link>
                 <div className="mt-2">
                     <div className = "max-w-[2.188rem] sm:hidden h-[2.438rem]  cursor-pointer w-full p-[1rem] relative ">
                         {!isMenuOpen &&
@@ -44,7 +48,7 @@ export default function Navbar(){
                     </div> 
                     <div className="hidden font-medium cursor-pointer  sm:flex md:flex-rol md:text-[1rem] lg:text-[1.2rem]">
                         <Link
-                        href={"./"}
+                        href={"../../"}
                         >
                             <a className="text-black items-menu-transition hover:text-green transition-colors duration-200  font-text max-w-[17rem] ml-[1.875rem] mb-[1.563rem]">
                                 Início
