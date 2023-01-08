@@ -28,6 +28,10 @@ export const getServerSideProps: GetServerSideProps = async(context) => {
 
    const cityData = await fetch(`https://api.tomtom.com/search/2/reverseGeocode/${latitude},${longitude}?key=YrGU0HeVxr169qOuGf8oZdggx3gthQFS&entityType=PostalCodeArea&mapcodes=International`)
   const cityDataJson = await cityData.json()
+  
+    const admin = await fetch('http://cadetutatu.uenp.edu.br:3333/users/all')//getData(email!.toString())    
+  const adminData = await admin.json()
+  console.log(adminData);
 
 const city = cityDataJson.addresses[0].address.municipality
   const jsonData = await data.json()
